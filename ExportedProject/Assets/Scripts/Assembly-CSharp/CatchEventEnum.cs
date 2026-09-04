@@ -1,0 +1,11 @@
+public enum CatchEventEnum
+{
+	SHOW_CALL = 0,
+	SHOW_END_START = 1,
+	SHOW_STEP2 = 2,
+	CATCH_HIT = 3,
+	CATCH_HIT_FINISHED = 4,
+	GAME_SUCCESS = 5,
+	GAME_FAIL = 6,
+	SHOW_EXIT = 7
+}
