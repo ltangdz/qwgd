@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1932368558297629
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4708595550176271}
+  - component: {fileID: 114456051556086987}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4708595550176271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932368558297629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114456051556086987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932368558297629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f8c4d42304d9a7cd31d22caa78f503, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  gameManager: {fileID: 0}
+  playerdata:
+    resultDayVal: []
+    resultHourVal: []
+    nickname: YAHU
+    isShowNote: 1
+    dlc7Invades: 000000000000000000000000
+    toolDLC7:
+    - 0
+    - 1
+    - 2
+    - 10
+    - 12
+    - 15
+    titanStep: 0
+    aiNameDlc7: '???'
+    aiSpeakHistoryIds: []
+    aiSpeakGroupIds: []
+    aiWillSpeakGroupIds: []
+    unReadMailIds: []
+    sqlFinishedNames: []
+    sqlCompareNames: []
+    basicNameList: []
+    showTitanButton: 0
+    eventno:
+    startTime: 0
+    endTime: 0
+    accountTime: 0
+    getMask: 0
+    getSql: 0
+    danger: 0
+    newsHotVal: 0
+    chatLoginID: 1400016
+    OpenedMail: []
+    OpenMail: []
+    isovertask: 0
+    notoversubmitcount: -1
+    isCourseOver: 0
+    isCourse00: 0
+    isCourse01: 0
+    isCourse02: 0
+    isCourse03: 0
+    isCourse04: 0
+    isCourse05: 0
+    isCourse06: 0
+    isCourse07: 0
+    isCourse08: 0
+    isCourse09: 0
+    isCourse10: 0
+    isCourse11: 0
+    isCourse12: 0
+    isCourse13: 0
+    isCourse14: 0
+    isCourse15: 0
+    isCourse16: 0
+    isTuli01: 0
+    isTuli02: 0
+    isTuli03: 0
+    isTuli04: 0
+    isTuli05: 0
+    isTuli06: 0
+    isTuli07: 0
+    isYulunCourse01: 0
+    isYulunCourse04: 0
+    isstartgetemailitem: 0
+    weizhuangpos: 0
+    phoneCall: []
+    canweizhuangcondition: []
+    videotiplist: []
+    itemlist: []
+    isDLC: 0
+    isstarttask: 0
+    newsidlist: []
+    loglist: []
+    reasoninglist: []
+    savetime: 0
+    lookupnews: 0
+    islast4: 0
+    ishasciovoice: 0
+    ishastomblancovoice: 0
+    isvoiceopen: 0
+    isenterhoutai: 0
+    isopenreport: 0
+    isopenfolder2: 0
+    isopenfolder3: 0
+    isopenfolder4: 0
+    isCanPlayYulun: 0
+    isYulunGameOver: 0
+    twodriveVanType: 0
+    isshowhoutaizimu0: 0
+    isshowhoutaizimu1: 0
+    isshowhoutaizimu2: 0
+    isshowhoutaizimu3: 0
+    isshowhoutaizimu4: 0
+    isreport1open: 0
+    isreport2open: 0
+    isreport3open: 0
+    isreport4open: 0
+    isreport5open: 0
+    isreport6open: 0
+    isreport7open: 0
+    isreport8open: 0
+    isreport9open: 0
+    isreport10open: 0
+    isreport11open: 0
+    isreport12open: 0
+    isreport13open: 0
+    isreport14open: 0
+    isstartselectnored: 0
+    isfixredline: 0
+    isTriggerBoom: 0
+    boomLastTime: 0
+    boomList:
+    - 3300007
+    - 3300008
+    - 3300009
+    - 3300010
+    - 3300011
+    canPlayHideGame: 0
+    completeHideGame: 0
+    zhadanhide: 0
+    isZhadanStart: 0
+    zhadantime: 0
+    temporaryhopelist: []
+    hopelist:
+    livebroadingstep: 0
+    livebroadingcurrenthopeid: -1
+    hopestep: -1
+    leftshowspecials:
+    livebroadinglefttime: 0
+    islivecourse: 0
+    leftshowspecials0102:
+    leftshowspecials0304:
+    leftshowspecials05:
+    compeletehopelist: []
+    livebroadinganswerrecords: []
+    livebroadingchatstep: 0
+    islookcio2300087: 0
+    islookcio2300088: 0
+    islookcio2300089: 0
+    isDelVan: 0
+    livebroadingfailedcount: 0
+    livesqlbtncourse: 0
+    iszhiboover: 0
+    livebroadtotaltime: 0
+    isDecryptInvade: 0
+    isCanCatch: 0
+    clickRedBagCount: 0
+    iamPoliceWrongCount: 0
+    taohua_dlc: 0
