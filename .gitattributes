@@ -1,0 +1,4 @@
+# Store large Unity media assets with Git LFS
+ExportedProject/Assets/VideoClip/*.mp4 filter=lfs diff=lfs merge=binary -text
+ExportedProject/Assets/AudioClip/*.ogg filter=lfs diff=lfs merge=binary -text
+ExportedProject/Assets/Scenes/start.unity filter=lfs diff=lfs merge=binary -text
